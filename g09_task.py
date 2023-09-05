@@ -46,10 +46,11 @@ def update_data(inchi_key, conformation_id, log_file, chk_file, status):
         WHERE inchi_key = ? AND conformation_id = ?
         ''', (log_file, chk_file, status, inchi_key, conformation_id))
 
+
 def update_batch_data(inchi_keys, ids, log_files, chk_files, sts):
     conn.execute("BEGIN TRANSACTION")
     for inchi_key, id, log_file, chk_file, status in tqdm.tqdm(zip(inchi_keys, ids, log_files, chk_files, sts), total=len(sts)):
-        update_data(inchi_key, id, log_file, chk_file, status)
+        update_data(inchi_key, id, str(log_file), str(chk_file), status)
 
 
 def insert_batch_data(batch: str, directory: Path):

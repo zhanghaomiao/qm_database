@@ -45,7 +45,7 @@ def update_result(ctx, cal_dir):
         chk_files.append(chk_file)
         inchi_keys.append(file.stem.split("_freqcharge_")[0])
         ids.append(file.stem.split("_")[-1])
-    update_batch_data(inchi_keys, ids, log_files, chk_files, ids)
+    update_batch_data(inchi_keys, ids, log_files, chk_files, sts)
     commit_and_close()
 
 

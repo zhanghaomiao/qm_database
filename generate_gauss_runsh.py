@@ -5,7 +5,7 @@ with open("config.yaml", "r") as f:
     settings = yaml.safe_load(f)
 
 RELATIVE_DIR = settings['relative_dir']
-JOB_DIR = settings["JOB_DIR"]
+JOB_DIR = settings["job_dir"]
 WORKING_DIR = settings['working_dir']
 TEMPLATE = settings['template']
 
